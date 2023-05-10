@@ -1,21 +1,16 @@
-const mainContainer = document.querySelector(".container")
+const mainContainer = document.querySelector(".main-container")
 const thanksContainer = document.querySelector(".thank-you")
-const submitButton = document.getElementById("submit-rating")
-const ratings = document.querySelectorAll(".btn")
-const actualRating = document.getElementById("rating")
+const submitButton = document.getElementById("submit")
+const rating = document.getElementById("rating")
+const rates = document.querySelectorAll(".btn")
 
 submitButton.addEventListener("click", () => {
-    mainContainer.style.display = "none"
     thanksContainer.classList.remove("hidden")
-
-    ratings.forEach((rating) => {
-        rating.addEventListener("click", () => {
-            actualRating.innerHTML = rating.innerHTML
-        })
-    })
+    mainContainer.style.display = "none"
 })
 
-rateAgain.addEventListener("click", () => {
-    mainContainer.style.display = "block"
-    thanksContainer.classList.add("hidden")
+rates.forEach((rate) => {
+    rate.addEventListener("click", () => {
+        rating.innerHTML = rate.innerHTML
+    })
 })
